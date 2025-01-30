@@ -8,15 +8,14 @@ class StudentService extends GetxController {
 
   Future<void> init() async {
     _studentsBox = await Hive.openBox<Student>('students');
-    students.assignAll(_studentsBox.values); // Initialize observable list
+    students.assignAll(_studentsBox.values);
   }
 
   Future<void> addStudent(Student student) async {
     await _studentsBox.put(student.id, student);
-    students.assignAll(_studentsBox.values); // Update observable list
+    students.assignAll(_studentsBox.values);
   }
 
-  // Similar updates for updateStudent and deleteStudent:
   Future<void> updateStudent(Student student) async {
     await _studentsBox.put(student.id, student);
     students.assignAll(_studentsBox.values);

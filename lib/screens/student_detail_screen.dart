@@ -17,7 +17,6 @@ class StudentDetailScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // Circular avatar with image
               CircleAvatar(
                 radius: 100,
                 backgroundImage:
